@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-studio-black: #171717;
+  --color-warm-ivory: #F5F0E8;
+  --color-terracotta: #D85C3F;
+  --color-terracotta-hover: #c44e32;
+  --color-soft-sage: #D8E5D0;
+  --color-soft-sage-dark: #b9caa8;
+  --font-serif: var(--font-serif), "Instrument Serif", Georgia, serif;
+  --font-sans: "Neue Montreal", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:root {
+  --studio-black: #171717;
+  --warm-ivory: #F5F0E8;
+  --terracotta: #D85C3F;
+  --soft-sage: #D8E5D0;
+  --white: #FFFFFF;
+}
+
+/* Custom scrollbar for editorial feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171717;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 240, 232, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D85C3F;
+}
+
+/* Base typography helpers */
+.editorial-title {
+  font-family: var(--font-serif), Georgia, serif;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+}
+
+.editorial-italic {
+  font-style: italic;
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.eyebrow-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+    overflow-x: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hide OS cursor on desktop pointer devices when color-blending circular cursor is active */
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
