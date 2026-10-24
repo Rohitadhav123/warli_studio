@@ -306,27 +306,24 @@ export default function ServicesList({ onOpenInquiry }: ServicesListProps) {
                       setActiveIndex(idx);
                     }
                   }}
-                  className={`service-row-item group py-7 md:py-9 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#D85C3F] px-4 -mx-4 rounded-sm ${
-                    isCurrent ? "bg-white/[0.04]" : "hover:bg-white/[0.02]"
-                  }`}
+                  className={`service-row-item group py-7 md:py-9 transition-all duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#D85C3F] px-4 -mx-4 rounded-sm ${isCurrent ? "bg-white/[0.04]" : "hover:bg-white/[0.02]"
+                    }`}
                 >
                   <div className="flex items-center justify-between gap-4">
                     <div className="flex items-baseline gap-6 md:gap-8 flex-1">
                       <span
-                        className={`font-mono text-sm md:text-base transition-colors ${
-                          isCurrent ? "text-[#D85C3F] font-bold" : "text-[#F5F0E8]/40"
-                        }`}
+                        className={`font-mono text-sm md:text-base transition-colors ${isCurrent ? "text-[#D85C3F] font-bold" : "text-[#F5F0E8]/40"
+                          }`}
                       >
                         {service.number}
                       </span>
 
                       <div>
                         <h3
-                          className={`font-serif text-2xl sm:text-3xl md:text-4xl tracking-tight transition-colors ${
-                            isCurrent
-                              ? "text-[#F5F0E8]"
-                              : "text-[#F5F0E8]/70 group-hover:text-white"
-                          }`}
+                          className={`font-serif text-2xl sm:text-3xl md:text-4xl tracking-tight transition-colors ${isCurrent
+                            ? "text-[#F5F0E8]"
+                            : "text-[#F5F0E8]/70 group-hover:text-white"
+                            }`}
                         >
                           {service.title}
                         </h3>
@@ -337,11 +334,10 @@ export default function ServicesList({ onOpenInquiry }: ServicesListProps) {
                     </div>
 
                     <div
-                      className={`w-9 h-9 shrink-0 rounded-full border flex items-center justify-center transition-all duration-300 ${
-                        isCurrent
-                          ? "border-[#D85C3F] bg-[#D85C3F] text-white rotate-0 shadow-[0_4px_16px_rgba(216,92,63,0.3)]"
-                          : "border-white/20 text-white/50 group-hover:border-white/50 group-hover:text-white"
-                      }`}
+                      className={`w-9 h-9 shrink-0 rounded-full border flex items-center justify-center transition-all duration-300 ${isCurrent
+                        ? "border-[#D85C3F] bg-[#D85C3F] text-white rotate-0 shadow-[0_4px_16px_rgba(216,92,63,0.3)]"
+                        : "border-white/20 text-white/50 group-hover:border-white/50 group-hover:text-white"
+                        }`}
                     >
                       <ArrowUpRight className="w-4 h-4" />
                     </div>

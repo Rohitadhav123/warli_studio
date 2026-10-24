@@ -7,8 +7,10 @@
   --color-terracotta-hover: #c44e32;
   --color-soft-sage: #D8E5D0;
   --color-soft-sage-dark: #b9caa8;
-  --font-serif: var(--font-serif), "Instrument Serif", Georgia, serif;
+  --font-display: "Cabinet Grotesk", "Syne", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Cabinet Grotesk", "Syne", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: "Neue Montreal", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Space Mono", Consolas, Menlo, Monaco, monospace;
 }
 
 :root {
@@ -17,6 +19,10 @@
   --terracotta: #D85C3F;
   --soft-sage: #D8E5D0;
   --white: #FFFFFF;
+  --font-display: "Cabinet Grotesk", "Syne", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Cabinet Grotesk", "Syne", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "Neue Montreal", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Space Mono", Consolas, Menlo, Monaco, monospace;
 }
 
 /* Custom scrollbar for editorial feel */
@@ -38,23 +44,35 @@
   background: #D85C3F;
 }
 
-/* Base typography helpers */
+/* Option A: Architectural Grotesque Typography */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
 .editorial-title {
-  font-family: var(--font-serif), Georgia, serif;
-  letter-spacing: -0.025em;
-  line-height: 0.95;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.94;
 }
 
 .editorial-italic {
   font-style: italic;
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
 .eyebrow-label {
+  font-family: var(--font-mono);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.75rem;
-  font-weight: 500;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 700;
 }
 
 /* Marquee infinite scroll */

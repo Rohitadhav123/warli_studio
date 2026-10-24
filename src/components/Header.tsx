@@ -48,9 +48,7 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
 
   const navLinks = [
     { label: "Work", href: "/#work", hash: "work" },
-    { label: "Services", href: "/#services", hash: "services" },
     { label: "About", href: "/#about", hash: "about" },
-    { label: "Approach", href: "/#approach", hash: "approach" },
     { label: "Contact", href: "/#contact", hash: "contact" },
   ];
 
@@ -77,15 +75,18 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-          {/* Wordmark */}
+          {/* Company Brand Logo */}
           <Link
             href="/"
-            className="group flex items-baseline gap-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F] rounded-sm"
-            aria-label="Warli Studios Home"
+            className="group flex items-center gap-3 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F] rounded-sm py-1"
+            aria-label="Warli Archives Home"
           >
-            <span className="font-serif text-2xl md:text-3xl tracking-tight text-[#F5F0E8] group-hover:text-white transition-colors">
-              Warli Studios
-            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/warli-logo-white.png"
+              alt="Warli Archviz"
+              className="h-7 sm:h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+            />
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#D85C3F] group-hover:scale-125 transition-transform" />
           </Link>
 
@@ -152,10 +153,13 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
         >
           {/* Top Bar inside Overlay */}
           <div className="flex items-center justify-between border-b border-white/10 pb-6">
-            <div className="flex items-baseline gap-2">
-              <span className="font-serif text-2xl tracking-tight text-[#F5F0E8]">
-                Warli Studios
-              </span>
+            <div className="flex items-center gap-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/warli-logo-white.png"
+                alt="Warli Archviz"
+                className="h-7 w-auto object-contain"
+              />
               <span className="w-1.5 h-1.5 rounded-full bg-[#D85C3F]" />
             </div>
             <button

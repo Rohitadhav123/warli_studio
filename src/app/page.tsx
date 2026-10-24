@@ -4,9 +4,7 @@ import React, { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import FeaturedProjects from "@/components/FeaturedProjects";
-import ServicesList from "@/components/ServicesList";
 import StudioIntroduction from "@/components/StudioIntroduction";
-import ProcessSteps from "@/components/ProcessSteps";
 import IndustriesMarquee from "@/components/IndustriesMarquee";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -40,16 +38,10 @@ export default function Home() {
         {/* 3. Featured Projects (Editorial asymmetric grid, Warm Ivory section) */}
         <FeaturedProjects onOpenInquiry={() => handleOpenInquiry()} />
 
-        {/* 4. Services Overview (Numbered list 01-05 with hover reveal, Dark section) */}
-        <ServicesList onOpenInquiry={handleOpenInquiry} />
-
-        {/* 5. Studio Introduction (Ivory section with pull-quote statement) */}
+        {/* 4. Studio Introduction (Ivory section with pull-quote statement) */}
         <StudioIntroduction onOpenInquiry={() => handleOpenInquiry()} />
 
-        {/* 6. Creative Approach (Stepped process on Soft Sage background) */}
-        <ProcessSteps />
-
-        {/* 7. Industries We Aim to Work With (Typographic marquee & curated matrix) */}
+        {/* 5. Industries We Aim to Work With (Typographic marquee & curated matrix) */}
         <IndustriesMarquee onOpenInquiry={handleOpenInquiry} />
 
         {/* 8. Final CTA (Large dark section: "Have a project in mind?") */}

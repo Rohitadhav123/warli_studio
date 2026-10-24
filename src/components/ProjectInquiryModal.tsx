@@ -132,11 +132,19 @@ export default function ProjectInquiryModal({
           <div>
             {/* Header */}
             <div className="border-b border-white/10 pb-6 mb-8">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 rounded-full bg-[#D85C3F]" />
-                <span className="eyebrow-label text-[#F5F0E8]/60">
-                  Direct Studio Commission
-                </span>
+              <div className="flex items-center justify-between gap-4 mb-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/warli-logo-white.png"
+                  alt="Warli Archviz"
+                  className="h-6 w-auto object-contain opacity-90"
+                />
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#D85C3F]" />
+                  <span className="eyebrow-label text-[#F5F0E8]/60 text-[11px]">
+                    Direct Studio Commission
+                  </span>
+                </div>
               </div>
               <h2
                 id="inquiry-modal-title"

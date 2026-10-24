@@ -11,9 +11,7 @@ export default function Footer() {
 
   const navLinks = [
     { label: "Work", href: "#work" },
-    { label: "Services", href: "#services" },
     { label: "About", href: "#about" },
-    { label: "Approach", href: "#approach" },
     { label: "Contact", href: "#contact" },
   ];
 
@@ -37,12 +35,15 @@ export default function Footer() {
             <div>
               <Link
                 href="/"
-                className="group inline-flex items-baseline gap-2 mb-6"
-                aria-label="Warli Studios"
+                className="group inline-flex items-center gap-3 mb-6"
+                aria-label="Warli Archives"
               >
-                <span className="font-serif text-3xl md:text-4xl tracking-tight text-[#F5F0E8] group-hover:text-white transition-colors">
-                  Warli Studios
-                </span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/warli-logo-white.png"
+                  alt="Warli Archviz"
+                  className="h-9 sm:h-10 md:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+                />
                 <span className="w-2 h-2 rounded-full bg-[#D85C3F]" />
               </Link>
 

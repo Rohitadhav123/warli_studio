@@ -93,15 +93,15 @@ export default function WorkPage() {
       <header className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 md:px-12 py-6">
         <Link
           href="/"
-          className="group flex items-baseline gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F] rounded-sm"
-          aria-label="Warli Studios Home"
+          className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F] rounded-sm py-1"
+          aria-label="Warli Archives Home"
         >
-          <span
-            className="text-2xl md:text-3xl tracking-tight text-white font-semibold"
-            style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
-          >
-            Warli Studios
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/warli-logo-white.png"
+            alt="Warli Archviz"
+            className="h-7 sm:h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+          />
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#D85C3F] group-hover:scale-125 transition-transform" />
         </Link>
 
@@ -150,12 +150,15 @@ export default function WorkPage() {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 bg-[#050505]/98 backdrop-blur-xl flex flex-col px-8 py-10">
           <div className="flex items-center justify-between mb-12">
-            <span
-              className="text-2xl text-white"
-              style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
-            >
-              Warli Studios
-            </span>
+            <div className="flex items-center gap-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/warli-logo-white.png"
+                alt="Warli Archviz"
+                className="h-7 w-auto object-contain"
+              />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D85C3F]" />
+            </div>
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="text-white/60 hover:text-white"
@@ -174,8 +177,8 @@ export default function WorkPage() {
                 key={item.label}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-4xl text-white/70 hover:text-white transition-colors border-b border-white/10 pb-4"
-                style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}
+                className="text-4xl text-white/70 hover:text-white transition-colors border-b border-white/10 pb-4 font-bold tracking-tight"
+                style={{ fontFamily: "var(--font-display)" }}
               >
                 {item.label}
               </Link>
