@@ -17,7 +17,6 @@ interface IndustriesProps {
 export default function IndustriesMarquee({ onOpenInquiry }: IndustriesProps) {
   const [activeIndustry, setActiveIndustry] = useState<string | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
 
   // Duplicate the industry array for a seamless marquee loop
   const marqueeItems = [...TARGET_INDUSTRIES, ...TARGET_INDUSTRIES];
@@ -30,17 +29,6 @@ export default function IndustriesMarquee({ onOpenInquiry }: IndustriesProps) {
     if (prefersReducedMotion) return;
 
     const ctx = gsap.context(() => {
-      gsap.from(".marquee-header-anim", {
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: "top 85%",
-        },
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power3.out",
-      });
 
       gsap.from(".industry-card-anim", {
         scrollTrigger: {
@@ -64,32 +52,6 @@ export default function IndustriesMarquee({ onOpenInquiry }: IndustriesProps) {
       className="bg-[#171717] text-[#F5F0E8] py-24 md:py-36 border-b border-white/10 overflow-hidden"
       aria-label="Industries We Aim To Work With"
     >
-      <div
-        ref={headerRef}
-        className="max-w-7xl mx-auto px-6 md:px-12 mb-12 md:mb-16"
-      >
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/10">
-          <div>
-            <div className="marquee-header-anim flex items-center gap-3 mb-4">
-              <span className="w-2 h-2 rounded-full bg-[#D85C3F]" />
-              <span className="eyebrow-label text-[#F5F0E8]/60">
-                Strategic Sectors // Ambition
-              </span>
-            </div>
-            <h2 className="marquee-header-anim editorial-title text-4xl sm:text-5xl md:text-6xl text-[#F5F0E8] font-normal tracking-tight">
-              Industries we aim to{" "}
-              <span className="editorial-italic font-normal text-[#D85C3F]">
-                work with.
-              </span>
-            </h2>
-          </div>
-
-          <p className="marquee-header-anim text-sm text-[#F5F0E8]/70 max-w-sm font-sans leading-relaxed">
-            We partner with visionary founders, category disruptors, and luxury houses that value uncompromising brand distinction.
-          </p>
-        </div>
-      </div>
-
       {/* Elegant Typographic Marquee Banner */}
       <div className="relative w-full py-6 bg-white/[0.02] border-y border-white/10 overflow-hidden mb-16">
         <div className="animate-marquee whitespace-nowrap flex items-center">

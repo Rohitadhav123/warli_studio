@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import StudioIntroduction from "@/components/StudioIntroduction";
-import IndustriesMarquee from "@/components/IndustriesMarquee";
+import ServicesSection from "@/components/ServicesSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import ProjectInquiryModal from "@/components/ProjectInquiryModal";
@@ -41,10 +41,10 @@ export default function Home() {
         {/* 4. Studio Introduction (Ivory section with pull-quote statement) */}
         <StudioIntroduction onOpenInquiry={() => handleOpenInquiry()} />
 
-        {/* 5. Industries We Aim to Work With (Typographic marquee & curated matrix) */}
-        <IndustriesMarquee onOpenInquiry={handleOpenInquiry} />
+        {/* 5. Services Section (Production, 3D CGI, AI, Branding, Packaging, Website Design) */}
+        <ServicesSection onOpenInquiry={handleOpenInquiry} />
 
-        {/* 8. Final CTA (Large dark section: "Have a project in mind?") */}
+        {/* 6. Final CTA (Large dark section: "Have a project in mind?") */}
         <CTASection onOpenInquiry={() => handleOpenInquiry()} />
       </main>
 

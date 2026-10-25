@@ -58,6 +58,7 @@ export default function ProjectInquiryModal({
     "AI Content Creation",
     "Branding & Visual Identity",
     "Packaging Design",
+    "Website Design & Digital Experience",
   ];
 
   const toggleService = (srv: string) => {
@@ -171,11 +172,10 @@ export default function ProjectInquiryModal({
                         type="button"
                         key={srv}
                         onClick={() => toggleService(srv)}
-                        className={`px-3.5 py-2 rounded-sm text-xs font-mono transition-all border cursor-pointer ${
-                          isSelected
+                        className={`px-3.5 py-2 rounded-sm text-xs font-mono transition-all border cursor-pointer ${isSelected
                             ? "bg-[#D85C3F] text-white border-[#D85C3F]"
                             : "bg-white/5 text-[#F5F0E8]/80 border-white/10 hover:border-white/30"
-                        }`}
+                          }`}
                       >
                         {isSelected ? "✓ " : "+ "}
                         {srv}
