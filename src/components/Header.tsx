@@ -70,8 +70,8 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
-            ? "bg-[#171717]/92 backdrop-blur-md border-b border-white/10 py-4 shadow-lg shadow-black/20"
-            : "bg-transparent py-6 md:py-8"
+          ? "bg-[#171717]/92 backdrop-blur-md border-b border-white/10 py-4 shadow-lg shadow-black/20"
+          : "bg-transparent py-6 md:py-8"
           }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">

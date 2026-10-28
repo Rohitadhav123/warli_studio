@@ -42,8 +42,11 @@ export default function ServicesSection({
     setIsDetailModalOpen(true);
   };
 
-  const renderIcon = (iconName: string) => {
-    const props = { className: "w-5 h-5 text-[#D85C3F]" };
+  const renderIcon = (
+    iconName: string,
+    className: string = "w-5 h-5 text-[#D85C3F]"
+  ) => {
+    const props = { className };
     switch (iconName) {
       case "Video":
         return <Video {...props} />;
@@ -150,58 +153,55 @@ export default function ServicesSection({
                   handleCardClick(service);
                 }
               }}
-              className="group relative bg-[#1c1c1c] border border-white/10 hover:border-[#D85C3F]/70 rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:shadow-[#D85C3F]/15 hover:-translate-y-2 cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F]"
+              className="group relative bg-[#1c1c1c] border border-white/10 hover:border-[#D85C3F]/80 rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:shadow-[#D85C3F]/20 hover:-translate-y-1.5 cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F] aspect-square w-full overflow-hidden"
             >
               {/* Dynamic Ambient Hover Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#D85C3F]/5 via-transparent to-[#D85C3F]/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#D85C3F]/10 via-transparent to-[#D85C3F]/15 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
+              {/* Card Top: Number, Category Tag, Title & Icon */}
               <div>
-                {/* Card Top: Number, Category Tag & Icon */}
-                <div className="flex items-center justify-between gap-4 mb-5">
-                  <div className="flex items-center gap-2.5">
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-2">
                     <span className="font-mono text-xs font-bold text-[#D85C3F]">
                       //{service.number}
                     </span>
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-[#F5F0E8]/50 truncate max-w-[170px]">
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-[#F5F0E8]/50 truncate max-w-[140px] sm:max-w-[170px]">
                       {service.category}
                     </span>
                   </div>
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#D85C3F]/20 group-hover:border-[#D85C3F]/40 group-hover:scale-105 transition-all">
-                    {renderIcon(service.iconName)}
+
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#D85C3F] group-hover:border-[#D85C3F] group-hover:scale-105 transition-all">
+                    {renderIcon(service.iconName, "w-4 h-4 sm:w-5 sm:h-5 text-[#D85C3F] group-hover:text-white transition-colors")}
                   </div>
                 </div>
 
                 {/* Card Title */}
-                <h3 className="text-xl sm:text-2xl font-display font-bold tracking-tight text-[#F5F0E8] group-hover:text-white transition-colors leading-tight mb-2.5">
+                <h3 className="text-lg sm:text-xl font-display font-bold tracking-tight text-[#F5F0E8] group-hover:text-white transition-colors leading-snug line-clamp-2">
                   {service.title}
                 </h3>
+              </div>
 
-                {/* Short Tagline Statement (Clean, punchy, no heavy theory) */}
-                <p className="text-sm text-[#F5F0E8]/70 leading-relaxed font-sans mb-6">
+              {/* Card Middle: Punchy Tagline & Key Deliverables */}
+              <div className="my-auto py-1">
+                <p className="text-xs sm:text-sm text-[#F5F0E8]/70 leading-relaxed font-sans line-clamp-2 mb-3">
                   {service.tagline}
                 </p>
 
-                {/* Key Deliverable Badges / Pills */}
-                <div className="mb-6">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#F5F0E8]/40 block mb-2.5">
-                    Deliverables Included
-                  </span>
-                  <div className="flex flex-wrap gap-1.5">
-                    {service.deliverableTags.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs font-mono px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-[#F5F0E8]/80 group-hover:border-[#D85C3F]/30 group-hover:text-[#F5F0E8] transition-colors"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {service.deliverableTags.slice(0, 3).map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="text-[10px] sm:text-[11px] font-mono px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/10 text-[#F5F0E8]/80 group-hover:border-[#D85C3F]/30 group-hover:text-[#F5F0E8] transition-colors"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
 
               {/* Card Bottom: Fast Studio Specs & Inspect CTA */}
-              <div className="pt-5 border-t border-white/10 mt-2">
-                <div className="flex items-center justify-between text-xs font-mono text-[#F5F0E8]/60 mb-4">
+              <div className="pt-3.5 border-t border-white/10">
+                <div className="flex items-center justify-between text-[11px] sm:text-xs font-mono text-[#F5F0E8]/60 mb-2.5">
                   <div className="flex items-center gap-1.5">
                     <Clock className="w-3.5 h-3.5 text-[#D85C3F]" />
                     <span>{service.turnaround}</span>
@@ -212,10 +212,10 @@ export default function ServicesSection({
                   </div>
                 </div>
 
-                {/* CTA Button */}
-                <div className="w-full py-2.5 px-3.5 rounded-lg bg-white/5 group-hover:bg-[#D85C3F] text-[#F5F0E8] group-hover:text-white transition-all duration-200 flex items-center justify-between text-xs font-mono uppercase tracking-wider font-semibold">
-                  <span>Inspect Service Details</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                {/* Compact CTA Row */}
+                <div className="w-full py-2 px-3 rounded-lg bg-white/5 group-hover:bg-[#D85C3F] text-[#F5F0E8] group-hover:text-white transition-all duration-200 flex items-center justify-between text-[11px] sm:text-xs font-mono uppercase tracking-wider font-semibold">
+                  <span>Inspect Details</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </div>
