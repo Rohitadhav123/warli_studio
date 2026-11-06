@@ -171,7 +171,7 @@ export default function ServiceDetailModal({
                 : "border-transparent text-[#F5F0E8]/60 hover:text-[#F5F0E8]"
             }`}
           >
-            01 // Scope & Capabilities
+            Overview & Scope
           </button>
           <button
             onClick={() => setActiveTab("process")}
@@ -181,7 +181,7 @@ export default function ServiceDetailModal({
                 : "border-transparent text-[#F5F0E8]/60 hover:text-[#F5F0E8]"
             }`}
           >
-            02 // 4-Step Production Runway
+            Production Process
           </button>
           <button
             onClick={() => setActiveTab("deliverables")}
@@ -191,7 +191,7 @@ export default function ServiceDetailModal({
                 : "border-transparent text-[#F5F0E8]/60 hover:text-[#F5F0E8]"
             }`}
           >
-            03 // Deliverables & Tech Stack
+            Deliverables & Master Outputs
           </button>
         </div>
 
@@ -340,7 +340,7 @@ export default function ServiceDetailModal({
         {/* Modal Footer Bar */}
         <div className="p-4 sm:p-6 border-t border-white/10 bg-[#141414] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="text-xs text-[#F5F0E8]/60 font-mono">
-            <span>READY TO COMMISSION // DIRECT FOUNDER COLLABORATION</span>
+            <span>Direct collaboration with creative directors · 100% asset ownership</span>
           </div>
 
           <div className="flex items-center gap-3">

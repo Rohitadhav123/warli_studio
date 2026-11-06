@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import { ArrowDown, ArrowUpRight, Volume2, VolumeX } from "lucide-react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 interface HeroProps {
   onOpenInquiry: () => void;
@@ -10,7 +10,7 @@ interface HeroProps {
 export default function Hero({ onOpenInquiry }: HeroProps) {
   const heroRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMuted, setIsMuted] = useState(true);
+  const isInViewRef = useRef(false);
   const [hasError, setHasError] = useState(false);
 
   // Exact public URL for existing local video in public/hero_vedio
@@ -23,30 +23,92 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
     }
   };
 
-  const toggleMute = () => {
-    if (!videoRef.current) return;
-    const nextMuted = !isMuted;
-    videoRef.current.muted = nextMuted;
-    setIsMuted(nextMuted);
-  };
+  const playVideo = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion) return;
+
+    video.muted = true;
+    if (video.paused) {
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          if (error.name === "AbortError") return;
+        });
+      }
+    }
+  }, []);
+
+  const pauseVideo = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (!video.paused) {
+      video.pause();
+    }
+  }, []);
 
   useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    if (prefersReducedMotion && videoRef.current) {
-      videoRef.current.pause();
-    } else if (videoRef.current) {
-      videoRef.current.muted = true;
-      if (videoRef.current.paused) {
-        const playPromise = videoRef.current.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => { });
-        }
-      }
+    if (prefersReducedMotion) {
+      video.pause();
+      return;
     }
-  }, []);
+
+    video.muted = true;
+
+    // Determine initial view state based on current scroll position
+    const isInitiallyInView = window.scrollY < 300;
+    isInViewRef.current = isInitiallyInView;
+
+    if (!isInitiallyInView) {
+      video.pause();
+    }
+
+    // IntersectionObserver stops the video when scrolled away, resumes when in view
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const inView = entry.isIntersecting && entry.intersectionRatio > 0.05;
+        isInViewRef.current = inView;
+
+        if (inView) {
+          playVideo();
+        } else {
+          pauseVideo();
+        }
+      },
+      {
+        threshold: [0, 0.05],
+      }
+    );
+
+    observer.observe(video);
+
+    // Pause video when user switches browser tabs or minimizes the window
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        pauseVideo();
+      } else if (isInViewRef.current) {
+        playVideo();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, [playVideo, pauseVideo]);
 
   return (
     <section
@@ -81,8 +143,8 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
             poster="/hero_vedio/hero-poster.jpg"
             onCanPlay={(e) => {
               const vid = e.currentTarget;
-              if (vid.paused) {
-                vid.play().catch(() => { });
+              if (isInViewRef.current && vid.paused) {
+                playVideo();
               }
             }}
             onError={() => setHasError(true)}
@@ -129,22 +191,6 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
                 alt="Warli Archviz"
                 className="h-3.5 w-auto object-contain opacity-95"
               />
-            </div>
-
-            {/* Accessible Audio Control (Speaker Icon Only) */}
-            <div className="flex items-center gap-2">
-              <button
-                onClick={toggleMute}
-                className="w-8 h-8 rounded-full bg-black/50 backdrop-blur-md border border-white/15 text-white/80 hover:text-white hover:bg-black/80 transition-all flex items-center justify-center cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F]"
-                aria-label={isMuted ? "Unmute video sound" : "Mute video sound"}
-                title={isMuted ? "Sound Off (Click to unmute)" : "Sound On (Click to mute)"}
-              >
-                {isMuted ? (
-                  <VolumeX className="w-3.5 h-3.5 text-white/70" />
-                ) : (
-                  <Volume2 className="w-3.5 h-3.5 text-[#D85C3F]" />
-                )}
-              </button>
             </div>
           </div>
 

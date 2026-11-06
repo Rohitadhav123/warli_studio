@@ -27,17 +27,36 @@ const EXTENDED_CASE_STUDIES: Record<
     technicalSpecs: { label: string; value: string }[];
   }
 > = {
-  "aura-parfum": {
-    client: "VYNA Botanical Sparkling (Concept Specimen)",
+  "deep-impact-protein": {
+    client: "Deep Impact Nutrition (Concept Specimen)",
     timeline: "8 Weeks Packaging & Tabletop Campaign",
     challenge:
-      "Creating a sun-drenched, architectural visual world for botanical sparkling beverages that elevates aluminum beverage cans into tactile luxury design objects.",
+      "Creating a bold, sun-drenched visual world for plant-based nutrition that elevates functional protein packaging into a tactile, premium design object.",
     solution:
-      "Engineered a terracotta brutalist plinth setting bathed in Mediterranean noon sun, contrasting clean serif typography with dewy condensation and ripe cross-section botanicals.",
+      "Engineered a terracotta brutalist plinth setting bathed in Mediterranean noon sun, contrasting clean typography with ripe mango fruit cross-sections, fresh botanicals, and architectural geometry.",
     artDirectionNotes: [
       "Natural sunlit direct-shadow geometry balancing modern packaging with organic warmth",
-      "Macro condensation choreography calibrated to realistic moisture droplet tension",
-      "Palette anchored by raw terracotta brick, cobalt sky, and citrus pigments",
+      "Macro tropical fruit and botanical choreography calibrated to fresh flavor notes",
+      "Palette anchored by raw terracotta stone, cobalt sky, and vibrant mango pigments",
+    ],
+    technicalSpecs: [
+      { label: "Capture Medium", value: "Hasselblad H6D-100c Medium Format" },
+      { label: "Optics Suite", value: "HC Macro 120mm II" },
+      { label: "Master Resolution", value: "11,600 x 8,700 px (100MP Master)" },
+      { label: "Grading Suite", value: "Capture One Pro + DaVinci ACES" },
+    ],
+  },
+  "aura-parfum": {
+    client: "Deep Impact Nutrition (Concept Specimen)",
+    timeline: "8 Weeks Packaging & Tabletop Campaign",
+    challenge:
+      "Creating a bold, sun-drenched visual world for plant-based nutrition that elevates functional protein packaging into a tactile, premium design object.",
+    solution:
+      "Engineered a terracotta brutalist plinth setting bathed in Mediterranean noon sun, contrasting clean typography with ripe mango fruit cross-sections, fresh botanicals, and architectural geometry.",
+    artDirectionNotes: [
+      "Natural sunlit direct-shadow geometry balancing modern packaging with organic warmth",
+      "Macro tropical fruit and botanical choreography calibrated to fresh flavor notes",
+      "Palette anchored by raw terracotta stone, cobalt sky, and vibrant mango pigments",
     ],
     technicalSpecs: [
       { label: "Capture Medium", value: "Hasselblad H6D-100c Medium Format" },

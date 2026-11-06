@@ -31,8 +31,8 @@ const MARQUEE_SERVICES: MarqueeServiceItem[] = [
     number: "01",
     title: "Live Shoots & Film Production",
     category: "Cinematography & Direction",
-    tagline: "Commercial ads, narrative brand films, and sensory cinematography.",
-    metric: "8K Cinema Raw",
+    tagline: "Narrative brand films, commercial spots, and sensory product captures.",
+    metric: "Cinema Grade",
     metricLabel: "Standard",
     iconName: "Video",
     accent: "#D85C3F",
@@ -40,10 +40,10 @@ const MARQUEE_SERVICES: MarqueeServiceItem[] = [
   {
     id: "3d-cgi-product-visualization",
     number: "02",
-    title: "3D CGI & Product Visualization",
-    category: "Spatial & Hyper-Realism",
-    tagline: "Photorealistic renders, fluid physics, and exploded tech views.",
-    metric: "Sub-Micron PBR",
+    title: "3D CGI & Spatial Design",
+    category: "Photorealism & Motion",
+    tagline: "Photorealistic spatial renders, fluid simulations, and kinetic motion.",
+    metric: "Ultra Photoreal",
     metricLabel: "Fidelity",
     iconName: "Box",
     accent: "#E27B58",
@@ -51,32 +51,32 @@ const MARQUEE_SERVICES: MarqueeServiceItem[] = [
   {
     id: "ai-content-creation",
     number: "03",
-    title: "AI Content Creation",
-    category: "Synthetic Generative Pipeline",
-    tagline: "Custom brand LoRA models, synthetic environments, and rapid loops.",
-    metric: "5x Velocity",
-    metricLabel: "Speed",
+    title: "AI Visuals & Generative Art",
+    category: "Concept Art & Exploration",
+    tagline: "Rapid concept ideation, surreal worlds, and campaign variations.",
+    metric: "Rapid Ideation",
+    metricLabel: "Agility",
     iconName: "Sparkles",
     accent: "#81B29A",
   },
   {
     id: "branding-visual-identity",
     number: "04",
-    title: "Branding & Visual Identity",
-    category: "Strategic Architecture",
-    tagline: "Architectural typography, geometric logomarks, and complete brand OS.",
-    metric: "Living Brand OS",
-    metricLabel: "Deliverable",
+    title: "Brand Identity & Design Systems",
+    category: "Visual Identity & Systems",
+    tagline: "Distinctive logomarks, refined typography, and comprehensive guidelines.",
+    metric: "Enduring Identity",
+    metricLabel: "System",
     iconName: "Palette",
     accent: "#F2CC8F",
   },
   {
     id: "packaging-design",
     number: "05",
-    title: "Packaging Design",
-    category: "Structural Pack & Unboxing",
-    tagline: "Tactile substrates, specialty foil dies, and shelf-dominating form.",
-    metric: "+40% Visual Lift",
+    title: "Packaging Design & Physical",
+    category: "Tactile Packaging & Print",
+    tagline: "Tactile substrates, specialty finishes, and memorable unboxing.",
+    metric: "Shelf Distinction",
     metricLabel: "Impact",
     iconName: "PackageCheck",
     accent: "#E07A5F",
@@ -84,11 +84,11 @@ const MARQUEE_SERVICES: MarqueeServiceItem[] = [
   {
     id: "website-design-digital-experience",
     number: "06",
-    title: "Website Design & Digital Experience",
-    category: "Creative Engineering & WebGL",
-    tagline: "High-performance Next.js flagships, kinetic motion, and headless speed.",
-    metric: "99+ Lighthouse",
-    metricLabel: "Score",
+    title: "Digital Flagships & Web",
+    category: "Interactive Design & Digital",
+    tagline: "Bespoke digital flagships with editorial typography and fluid motion.",
+    metric: "Fluid & Tactile",
+    metricLabel: "Experience",
     iconName: "Layout",
     accent: "#3D5A80",
   },
@@ -139,13 +139,13 @@ export default function ServicesMarquee({
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D85C3F]" />
           </span>
           <span className="tracking-widest uppercase text-[#F5F0E8]/70">
-            // Infinite Capabilities Stream // 6 Core Disciplines
+            Disciplines in Motion // Creative Capabilities
           </span>
         </div>
 
         <div className="flex items-center gap-4 text-[#F5F0E8]/50 text-[11px]">
           <span className="hidden md:inline-flex items-center gap-1.5">
-            <span className="text-[#D85C3F]">✦</span> Hover to pause & reveal specs
+            <span className="text-[#D85C3F]">✦</span> Hover to pause & explore
           </span>
           <button
             onClick={() => setIsPausedManually(!isPausedManually)}
