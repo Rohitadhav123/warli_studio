@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   Video,
   Box,
@@ -12,8 +13,7 @@ import {
   ArrowUpRight,
   Clock,
 } from "lucide-react";
-import { STUDIO_SERVICES, ServiceDetail } from "@/data/services";
-import ServiceDetailModal from "@/components/ServiceDetailModal";
+import { STUDIO_SERVICES } from "@/data/services";
 import ServicesMarquee from "@/components/ServicesMarquee";
 
 interface ServicesSectionProps {
@@ -26,8 +26,6 @@ export default function ServicesSection({
   onOpenInquiry,
   showMarquee = true,
 }: ServicesSectionProps) {
-  const [selectedService, setSelectedService] = useState<ServiceDetail | null>(null);
-  const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
   const [filter, setFilter] = useState<string>("all");
 
   const filteredServices = STUDIO_SERVICES.filter((srv) => {
@@ -37,11 +35,6 @@ export default function ServicesSection({
     if (filter === "digital-ai") return srv.filterCategory === "digital" || srv.filterCategory === "ai";
     return true;
   });
-
-  const handleCardClick = (service: ServiceDetail) => {
-    setSelectedService(service);
-    setIsDetailModalOpen(true);
-  };
 
   const renderIcon = (
     iconName: string,
@@ -134,20 +127,13 @@ export default function ServicesSection({
           ))}
         </div>
 
-        {/* Services High-Impact Grid */}
+        {/* Services High-Impact Grid (Direct Link to Dedicated Page - No Popup) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredServices.map((service) => (
-            <div
+            <Link
               key={service.id}
-              onClick={() => handleCardClick(service)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  handleCardClick(service);
-                }
-              }}
-              className="group relative bg-[#1c1c1c] border border-white/10 hover:border-[#D85C3F]/70 rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[360px] transition-all duration-300 hover:shadow-xl hover:shadow-[#D85C3F]/10 hover:-translate-y-1 cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F] overflow-hidden"
+              href={`/services/${service.id}`}
+              className="group relative bg-[#1c1c1c] border border-white/10 hover:border-[#D85C3F]/70 rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[360px] transition-all duration-300 hover:shadow-xl hover:shadow-[#D85C3F]/10 hover:-translate-y-1 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F] overflow-hidden block"
             >
               {/* Dynamic Subtle Hover Gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#D85C3F]/5 via-transparent to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -207,23 +193,13 @@ export default function ServicesSection({
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
 
       {/* Optional Horizontal Services Marquee */}
-      {showMarquee && (
-        <ServicesMarquee
-          onSelectService={(serviceId) => {
-            const target = STUDIO_SERVICES.find((s) => s.id === serviceId);
-            if (target) {
-              handleCardClick(target);
-            }
-          }}
-          onOpenInquiry={onOpenInquiry}
-        />
-      )}
+      {showMarquee && <ServicesMarquee onOpenInquiry={onOpenInquiry} />}
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Studio Service Footer Callout */}
@@ -245,21 +221,6 @@ export default function ServicesSection({
           </button>
         </div>
       </div>
-
-      {/* Deep Specification Modal on Card Click */}
-      <ServiceDetailModal
-        service={selectedService}
-        isOpen={isDetailModalOpen}
-        onClose={() => {
-          setIsDetailModalOpen(false);
-          setSelectedService(null);
-        }}
-        onInquire={(title) => {
-          setIsDetailModalOpen(false);
-          setSelectedService(null);
-          onOpenInquiry(title);
-        }}
-      />
     </section>
   );
 }

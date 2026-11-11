@@ -49,14 +49,8 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/icon.png" />
 
-        {/* Instant Hero Video Preload: Starts streaming bytes at millisecond zero */}
+        {/* Instant Hero Poster Preload */}
         <link rel="preload" href="/hero_vedio/hero-poster.jpg" as="image" />
-        <link
-          rel="preload"
-          href="/hero_vedio/hero-stream.mp4"
-          as="video"
-          type="video/mp4"
-        />
 
         {/* Fontshare: Cabinet Grotesk (Architectural Display) + Neue Montreal (Body) */}
         <link rel="preconnect" href="https://api.fontshare.com" />

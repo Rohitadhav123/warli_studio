@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   Video,
   Box,
@@ -198,24 +199,11 @@ export default function ServicesMarquee({
                 key={`${service.id}-${index}`}
                 className="inline-flex items-center"
               >
-                {/* Interactive Service Pill Card */}
-                <div
+                {/* Interactive Service Pill Card (Direct Link to Dedicated Page) */}
+                <Link
+                  href={`/services/${service.id}`}
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
-                  onClick={() => {
-                    if (onSelectService) {
-                      onSelectService(service.id);
-                    } else if (onOpenInquiry) {
-                      onOpenInquiry(service.title);
-                    }
-                  }}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      if (onSelectService) onSelectService(service.id);
-                    }
-                  }}
                   className={`group relative mx-3 md:mx-4 px-5 sm:px-6 md:px-7 py-3 sm:py-3.5 md:py-4 rounded-2xl border transition-all duration-300 cursor-pointer select-none flex items-center gap-3.5 sm:gap-5 ${isHovered
                     ? "bg-gradient-to-r from-[#1f1a18] via-[#241d1a] to-[#1f1a18] border-[#D85C3F] shadow-xl shadow-[#D85C3F]/20 scale-[1.03] z-10"
                     : isSibling
@@ -260,7 +248,7 @@ export default function ServicesMarquee({
                       {service.category}
                     </span>
                   </div>
-                </div>
+                </Link>
 
                 {/* Minimalist Studio Delimiter Between Service Cards */}
                 <div className="flex items-center gap-2 px-2 text-[#D85C3F]/40 select-none">

@@ -10,11 +10,11 @@ interface HeroProps {
 export default function Hero({ onOpenInquiry }: HeroProps) {
   const heroRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const isInViewRef = useRef(false);
+  const isInViewRef = useRef(true);
+  const primaryVideoSrc = "/hero_vedio/hero-stream.mp4";
+  const fallbackVideoSrc = "/hero_vedio/WhatsApp%20Video%202026-10-24%20at%209.17.34%20AM.mp4";
+  const [currentSrc, setCurrentSrc] = useState(primaryVideoSrc);
   const [hasError, setHasError] = useState(false);
-
-  // Exact public URL for existing local video in public/hero_vedio
-  const videoSrc = "/hero_vedio/WhatsApp%20Video%202026-10-24%20at%209.17.34%20AM.mp4";
 
   const handleScrollToWork = () => {
     const workElem = document.getElementById("work");
@@ -27,17 +27,15 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
     const video = videoRef.current;
     if (!video) return;
 
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    if (prefersReducedMotion) return;
-
+    video.defaultMuted = true;
     video.muted = true;
+    video.playsInline = true;
+
     if (video.paused) {
       const playPromise = video.play();
       if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          if (error.name === "AbortError") return;
+        playPromise.catch(() => {
+          // Ignore AbortError or mobile autoplay block; interaction listeners will retry on first touch/scroll
         });
       }
     }
@@ -55,29 +53,33 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
     const video = videoRef.current;
     if (!video) return;
 
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    if (prefersReducedMotion) {
-      video.pause();
-      return;
-    }
-
+    // Enforce mobile-safe muted inline playback attributes directly on the DOM node
+    video.defaultMuted = true;
     video.muted = true;
+    video.playsInline = true;
+    video.disableRemotePlayback = true;
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+
+    if (video.networkState === HTMLMediaElement.NETWORK_EMPTY) {
+      video.load();
+    }
 
     // Determine initial view state based on current scroll position
     const isInitiallyInView = window.scrollY < 300;
     isInViewRef.current = isInitiallyInView;
 
-    if (!isInitiallyInView) {
+    if (isInitiallyInView) {
+      playVideo();
+    } else {
       video.pause();
     }
 
     // IntersectionObserver stops the video when scrolled away, resumes when in view
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const inView = entry.isIntersecting && entry.intersectionRatio > 0.05;
+        const inView = entry.isIntersecting;
         isInViewRef.current = inView;
 
         if (inView) {
@@ -87,11 +89,38 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
         }
       },
       {
-        threshold: [0, 0.05],
+        threshold: 0,
       }
     );
 
     observer.observe(video);
+
+    // Retry playback on first user touch/scroll if mobile browser (e.g. iOS Low Power Mode) blocked initial autoplay
+    const cleanupInteractionListeners = () => {
+      window.removeEventListener("touchstart", handleFirstInteraction);
+      window.removeEventListener("pointerdown", handleFirstInteraction);
+      window.removeEventListener("click", handleFirstInteraction);
+      window.removeEventListener("scroll", handleFirstInteraction);
+    };
+
+    const handleFirstInteraction = () => {
+      if (isInViewRef.current && video.paused) {
+        playVideo();
+      }
+      if (!video.paused) {
+        cleanupInteractionListeners();
+      }
+    };
+
+    window.addEventListener("touchstart", handleFirstInteraction, { passive: true });
+    window.addEventListener("pointerdown", handleFirstInteraction, { passive: true });
+    window.addEventListener("click", handleFirstInteraction, { passive: true });
+    window.addEventListener("scroll", handleFirstInteraction, { passive: true });
+
+    const handlePlaying = () => {
+      cleanupInteractionListeners();
+    };
+    video.addEventListener("playing", handlePlaying);
 
     // Pause video when user switches browser tabs or minimizes the window
     const handleVisibilityChange = () => {
@@ -106,9 +135,17 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
 
     return () => {
       observer.disconnect();
+      cleanupInteractionListeners();
+      video.removeEventListener("playing", handlePlaying);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [playVideo, pauseVideo]);
+
+  const handleMediaReady = () => {
+    if (isInViewRef.current && videoRef.current?.paused) {
+      playVideo();
+    }
+  };
 
   return (
     <section
@@ -132,34 +169,28 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
         <div
           className="relative w-full h-[72vh] sm:h-[80vh] md:h-[85vh] max-h-[860px] min-h-[480px] rounded-2xl sm:rounded-3xl lg:rounded-[36px] overflow-hidden border border-white/20 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8),0_0_60px_rgba(216,92,63,0.12)] bg-[#121212] flex flex-col justify-between p-6 sm:p-8 md:p-12"
         >
-          {/* High-Definition Background Video Element - Instant Load with Faststart and 0ms Poster */}
+          {/* High-Definition Background Video Element - Mobile-Safe Inline Autoplay */}
           <video
             ref={videoRef}
+            src={currentSrc}
             autoPlay
             muted
             loop
             playsInline
             preload="auto"
             poster="/hero_vedio/hero-poster.jpg"
-            onCanPlay={(e) => {
-              const vid = e.currentTarget;
-              if (isInViewRef.current && vid.paused) {
-                playVideo();
+            onLoadedMetadata={handleMediaReady}
+            onLoadedData={handleMediaReady}
+            onCanPlay={handleMediaReady}
+            onError={() => {
+              if (currentSrc !== fallbackVideoSrc) {
+                setCurrentSrc(fallbackVideoSrc);
+              } else {
+                setHasError(true);
               }
             }}
-            onError={() => setHasError(true)}
-            style={{
-              transform: "translate3d(0, 0, 0)",
-              backfaceVisibility: "hidden",
-              WebkitBackfaceVisibility: "hidden",
-            }}
-            className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none contrast-[1.04] brightness-[1.02]"
-          >
-            {/* Ultra-responsive fast-start stream for immediate playback */}
-            <source src="/hero_vedio/hero-stream.mp4" type="video/mp4" />
-            {/* Existing local video fallback */}
-            <source src={videoSrc} type="video/mp4" />
-          </video>
+            className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+          />
 
           {/* Fallback only in rare case of media decode error */}
           {hasError && (
