@@ -30,7 +30,7 @@ export default function ProjectCard({
     >
       <Link
         href={`/work/${project.id}`}
-        className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F] rounded-sm group/link cursor-pointer"
+        className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A1F] rounded-sm group/link cursor-pointer"
         aria-label={`View case study for ${project.title}: ${project.subtitle}`}
       >
         {/* Visual Container with Sleek, Reduced Height */}
@@ -60,7 +60,7 @@ export default function ProjectCard({
 
           {/* Floating Reveal Arrow: persistent on mobile touch, animated on desktop hover */}
           <div
-            className={`absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#D85C3F] text-white flex items-center justify-center transition-all duration-300 shadow-xl ${
+            className={`absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#FF5A1F] text-white flex items-center justify-center transition-all duration-300 shadow-xl ${
               isHovered
                 ? "opacity-100 scale-100 translate-y-0 shadow-[0_8px_25px_rgba(216,92,63,0.4)]"
                 : "opacity-85 sm:opacity-0 scale-95 sm:scale-90 translate-y-0 sm:translate-y-2"
@@ -75,7 +75,7 @@ export default function ProjectCard({
         <div className="pt-3.5 sm:pt-4 pb-2 flex flex-col gap-1 sm:gap-1.5">
 
           <div className="flex items-baseline justify-between gap-4">
-            <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-[#F5F0E8] tracking-tight group-hover:text-[#D85C3F] transition-colors leading-tight">
+            <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-[#F5F0E8] tracking-tight group-hover:text-[#FF5A1F] transition-colors leading-tight">
               {project.title}
             </h3>
           </div>

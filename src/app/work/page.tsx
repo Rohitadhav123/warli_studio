@@ -86,14 +86,14 @@ export default function WorkPage() {
 
   return (
     <div
-      className="min-h-screen bg-[#050505] text-white selection:bg-[#D85C3F] selection:text-white"
+      className="min-h-screen bg-[#050505] text-white selection:bg-[#FF5A1F] selection:text-white"
       style={{ fontFamily: "'Neue Montreal', -apple-system, BlinkMacSystemFont, sans-serif" }}
     >
       {/* ── HEADER ── */}
       <header className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 md:px-12 py-6">
         <Link
           href="/"
-          className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F] rounded-sm py-1"
+          className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A1F] rounded-sm py-1"
           aria-label="Warli Archives Home"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -102,7 +102,7 @@ export default function WorkPage() {
             alt="Warli Archviz"
             className="h-7 sm:h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
           />
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#D85C3F] group-hover:scale-125 transition-transform" />
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#FF5A1F] group-hover:scale-125 transition-transform" />
         </Link>
 
         <nav
@@ -126,7 +126,7 @@ export default function WorkPage() {
           </button>
           <button
             onClick={() => router.push("/#contact")}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#D85C3F] text-white text-xs uppercase tracking-[0.16em] font-medium hover:bg-[#BF4C32] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#FF5A1F] text-white text-xs uppercase tracking-[0.16em] font-medium hover:bg-[#E94B16] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
             Start a Project
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -157,7 +157,7 @@ export default function WorkPage() {
                 alt="Warli Archviz"
                 className="h-7 w-auto object-contain"
               />
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D85C3F]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A1F]" />
             </div>
             <button
               onClick={() => setMobileMenuOpen(false)}
@@ -283,7 +283,7 @@ export default function WorkPage() {
                   key={f.id}
                   onClick={() => setActiveFilter(f.id)}
                   aria-pressed={isActive}
-                  className={`group flex items-center gap-2 px-4 md:px-5 py-2.5 rounded-full border text-xs md:text-sm font-medium tracking-wide transition-all duration-200 cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F] ${isActive
+                  className={`group flex items-center gap-2 px-4 md:px-5 py-2.5 rounded-full border text-xs md:text-sm font-medium tracking-wide transition-all duration-200 cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A1F] ${isActive
                     ? "border-white bg-white text-black"
                     : "border-white/12 text-white/35 hover:border-white/35 hover:text-white/65"
                     }`}
@@ -368,7 +368,7 @@ function WorkCard({ project, index, totalFiltered }: WorkCardProps) {
   return (
     <Link
       href={`/work/${project.id}`}
-      className={`work-card group block relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F] rounded-xl ${isFullWidth ? "md:col-span-2" : ""
+      className={`work-card group block relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A1F] rounded-xl ${isFullWidth ? "md:col-span-2" : ""
         }`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

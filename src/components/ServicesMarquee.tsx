@@ -36,7 +36,7 @@ const MARQUEE_SERVICES: MarqueeServiceItem[] = [
     metric: "Cinema Grade",
     metricLabel: "Standard",
     iconName: "Video",
-    accent: "#D85C3F",
+    accent: "#FF5A1F",
   },
   {
     id: "3d-cgi-product-visualization",
@@ -136,8 +136,8 @@ export default function ServicesMarquee({
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono">
         <div className="flex items-center gap-3">
           <span className="flex h-2 w-2 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#D85C3F] opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D85C3F]" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF5A1F] opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF5A1F]" />
           </span>
           <span className="tracking-widest uppercase text-[#F5F0E8]/70">
             Disciplines in Motion // Creative Capabilities
@@ -146,7 +146,7 @@ export default function ServicesMarquee({
 
         <div className="flex items-center gap-4 text-[#F5F0E8]/50 text-[11px]">
           <span className="hidden md:inline-flex items-center gap-1.5">
-            <span className="text-[#D85C3F]">✦</span> Hover to pause & explore
+            <span className="text-[#FF5A1F]">✦</span> Hover to pause & explore
           </span>
           <button
             onClick={() => setIsPausedManually(!isPausedManually)}
@@ -155,12 +155,12 @@ export default function ServicesMarquee({
           >
             {isPausedManually ? (
               <>
-                <Play className="w-3 h-3 text-[#D85C3F]" />
+                <Play className="w-3 h-3 text-[#FF5A1F]" />
                 <span>Resume Stream</span>
               </>
             ) : (
               <>
-                <Pause className="w-3 h-3 text-[#D85C3F]" />
+                <Pause className="w-3 h-3 text-[#FF5A1F]" />
                 <span>Pause</span>
               </>
             )}
@@ -205,7 +205,7 @@ export default function ServicesMarquee({
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   className={`group relative mx-3 md:mx-4 px-5 sm:px-6 md:px-7 py-3 sm:py-3.5 md:py-4 rounded-2xl border transition-all duration-300 cursor-pointer select-none flex items-center gap-3.5 sm:gap-5 ${isHovered
-                    ? "bg-gradient-to-r from-[#1f1a18] via-[#241d1a] to-[#1f1a18] border-[#D85C3F] shadow-xl shadow-[#D85C3F]/20 scale-[1.03] z-10"
+                    ? "bg-gradient-to-r from-[#1f1a18] via-[#241d1a] to-[#1f1a18] border-[#FF5A1F] shadow-xl shadow-[#FF5A1F]/20 scale-[1.03] z-10"
                     : isSibling
                       ? "bg-white/[0.015] border-white/5 opacity-40 hover:opacity-100"
                       : "bg-white/[0.025] border-white/10 hover:border-white/20"
@@ -213,14 +213,14 @@ export default function ServicesMarquee({
                 >
                   {/* Subtle Accent Glow Ring on Hover */}
                   <div
-                    className={`absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-300 ${isHovered ? "opacity-100 ring-1 ring-[#D85C3F]/50" : "opacity-0"
+                    className={`absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-300 ${isHovered ? "opacity-100 ring-1 ring-[#FF5A1F]/50" : "opacity-0"
                       }`}
                   />
 
                   {/* Left: Icon Badge */}
                   <div
                     className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center border transition-all duration-300 ${isHovered
-                      ? "bg-[#D85C3F]/20 border-[#D85C3F]/50 rotate-3"
+                      ? "bg-[#FF5A1F]/20 border-[#FF5A1F]/50 rotate-3"
                       : "bg-white/5 border-white/10"
                       }`}
                   >
@@ -241,7 +241,7 @@ export default function ServicesMarquee({
                     {/* Revealing Subtitle / Micro Category on Hover */}
                     <span
                       className={`font-mono text-[10px] sm:text-[11px] uppercase tracking-wider transition-all duration-300 overflow-hidden ${isHovered
-                        ? "max-h-5 opacity-100 text-[#D85C3F] mt-0.5"
+                        ? "max-h-5 opacity-100 text-[#FF5A1F] mt-0.5"
                         : "max-h-0 opacity-0"
                         }`}
                     >
@@ -251,8 +251,8 @@ export default function ServicesMarquee({
                 </Link>
 
                 {/* Minimalist Studio Delimiter Between Service Cards */}
-                <div className="flex items-center gap-2 px-2 text-[#D85C3F]/40 select-none">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#D85C3F]/40" />
+                <div className="flex items-center gap-2 px-2 text-[#FF5A1F]/40 select-none">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A1F]/40" />
                   <span className="font-mono text-xs text-white/20">✦</span>
                 </div>
               </div>

@@ -213,7 +213,7 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
   return (
     <div
       ref={pageRef}
-      className="relative min-h-screen bg-[#171717] text-[#F5F0E8] flex flex-col selection:bg-[#D85C3F] selection:text-white"
+      className="relative min-h-screen bg-[#080808] text-[#F5F3EF] flex flex-col selection:bg-[#FF5A1F] selection:text-white"
     >
       <Header onOpenInquiry={() => setIsInquiryOpen(true)} />
 
@@ -223,13 +223,13 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
           <div className="flex items-center justify-between py-4 border-b border-white/10 text-xs font-mono">
             <Link
               href="/#work"
-              className="inline-flex items-center gap-2 text-[#F5F0E8]/70 hover:text-white transition-colors group"
+              className="inline-flex items-center gap-2 text-[#F5F3EF]/70 hover:text-white transition-colors group"
             >
               <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
               <span>RETURN TO WORK</span>
             </Link>
 
-            <span className="text-[#D85C3F] uppercase tracking-wider">
+            <span className="text-[#FF5A1F] uppercase tracking-wider">
               {project.conceptLabel} {"//"} 0{currentIndex + 1} OF 0{FEATURED_PROJECTS.length}
             </span>
           </div>
@@ -238,17 +238,17 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
         {/* Case Study Hero Header */}
         <section className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
           <div className="case-hero-text flex items-center gap-3 mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#D85C3F]" />
-            <span className="eyebrow-label text-[#F5F0E8]/60">
+            <span className="w-2 h-2 rounded-full bg-[#FF5A1F]" />
+            <span className="eyebrow-label text-[#F5F3EF]/60">
               {project.discipline} {"//"} {project.year}
             </span>
           </div>
 
-          <h1 className="case-hero-text editorial-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#F5F0E8] font-normal tracking-tight mb-6">
+          <h1 className="case-hero-text editorial-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#F5F3EF] font-normal tracking-tight mb-6">
             {project.title}
           </h1>
 
-          <p className="case-hero-text text-xl md:text-2xl text-[#D8E5D0] font-serif max-w-3xl leading-relaxed mb-10">
+          <p className="case-hero-text text-xl md:text-2xl text-[#FF7847] font-serif max-w-3xl leading-relaxed mb-10">
             {project.subtitle}
           </p>
 
@@ -256,19 +256,19 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
           <div className="case-hero-text grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-white/10 text-xs font-mono">
             <div>
               <span className="text-white/40 block mb-1">CLIENT {"//"} SPECIMEN</span>
-              <span className="text-[#F5F0E8] font-medium">{details.client}</span>
+              <span className="text-[#F5F3EF] font-medium">{details.client}</span>
             </div>
             <div>
               <span className="text-white/40 block mb-1">DISCIPLINE</span>
-              <span className="text-[#D85C3F] font-medium">{project.discipline}</span>
+              <span className="text-[#FF5A1F] font-medium">{project.discipline}</span>
             </div>
             <div>
               <span className="text-white/40 block mb-1">TIMELINE</span>
-              <span className="text-[#F5F0E8] font-medium">{details.timeline}</span>
+              <span className="text-[#F5F3EF] font-medium">{details.timeline}</span>
             </div>
             <div>
               <span className="text-white/40 block mb-1">CLASSIFICATION</span>
-              <span className="text-[#F5F0E8] font-medium">{project.category}</span>
+              <span className="text-[#F5F3EF] font-medium">{project.category}</span>
             </div>
           </div>
         </section>
@@ -287,15 +287,15 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
 
             {/* Corner Badge */}
             <div className="absolute top-4 left-4 z-20">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#171717]/85 backdrop-blur-sm text-[10px] font-mono uppercase tracking-[0.16em] text-[#F5F0E8] border border-white/15">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#D85C3F]" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#080808]/85 backdrop-blur-sm text-[10px] font-mono uppercase tracking-[0.16em] text-[#F5F3EF] border border-white/15">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A1F]" />
                 {project.conceptLabel}
               </span>
             </div>
 
             <div className="absolute bottom-6 left-6 right-6 z-20 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
-                <p className="text-xs font-mono text-[#D8E5D0] tracking-widest uppercase mb-1">
+                <p className="text-xs font-mono text-[#FF7847] tracking-widest uppercase mb-1">
                   CORE SPECIMEN FOCUS
                 </p>
                 <p className="font-serif text-2xl text-white">
@@ -313,18 +313,18 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
         <section className="case-scroll-section max-w-7xl mx-auto px-6 md:px-12 mb-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <div className="lg:col-span-5">
-              <span className="eyebrow-label text-[#D85C3F] block mb-3">
+              <span className="eyebrow-label text-[#FF5A1F] block mb-3">
                 THE OBJECTIVE {"//"} BRIEF
               </span>
-              <h2 className="editorial-title text-3xl sm:text-4xl md:text-5xl text-[#F5F0E8] font-normal mb-6">
+              <h2 className="editorial-title text-3xl sm:text-4xl md:text-5xl text-[#F5F3EF] font-normal mb-6">
                 Redefining category expectations through sensory form.
               </h2>
-              <p className="text-base text-[#F5F0E8]/80 leading-relaxed font-sans mb-8">
+              <p className="text-base text-[#F5F3EF]/80 leading-relaxed font-sans mb-8">
                 {project.description}
               </p>
               <button
                 onClick={() => setIsInquiryOpen(true)}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#D85C3F] text-white text-xs uppercase tracking-[0.16em] font-medium hover:bg-[#BF4C32] transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FF5A1F] text-white text-xs uppercase tracking-[0.16em] font-medium hover:bg-[#E94B16] transition-colors cursor-pointer"
               >
                 <span>Commission Similar Work</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -334,20 +334,20 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
             <div className="lg:col-span-7 space-y-10 pl-0 lg:pl-8 border-t lg:border-t-0 lg:border-l border-white/10 pt-8 lg:pt-0">
               {/* Challenge */}
               <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-[#D8E5D0]">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#FF7847]">
                   01. The Strategic Challenge
                 </span>
-                <p className="text-lg text-[#F5F0E8]/90 font-serif leading-relaxed">
+                <p className="text-lg text-[#F5F3EF]/90 font-serif leading-relaxed">
                   {details.challenge}
                 </p>
               </div>
 
               {/* Solution */}
               <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-[#D85C3F]">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#FF5A1F]">
                   02. Studio Execution & Solution
                 </span>
-                <p className="text-lg text-[#F5F0E8]/90 font-serif leading-relaxed">
+                <p className="text-lg text-[#F5F3EF]/90 font-serif leading-relaxed">
                   {details.solution}
                 </p>
               </div>
@@ -363,10 +363,10 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
                       key={idx}
                       className="flex items-start gap-3 p-3.5 rounded-sm bg-white/[0.03] border border-white/5"
                     >
-                      <span className="text-xs font-mono text-[#D85C3F] mt-0.5">
+                      <span className="text-xs font-mono text-[#FF5A1F] mt-0.5">
                         0{idx + 1}
                       </span>
-                      <p className="text-sm text-[#F5F0E8]/85 font-sans">
+                      <p className="text-sm text-[#F5F3EF]/85 font-sans">
                         {note}
                       </p>
                     </div>
@@ -382,10 +382,10 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b border-white/10">
               <div>
-                <span className="eyebrow-label text-[#D85C3F] block mb-2">
+                <span className="eyebrow-label text-[#FF5A1F] block mb-2">
                   TECHNICAL MASTERY
                 </span>
-                <h3 className="editorial-title text-3xl sm:text-4xl text-[#F5F0E8]">
+                <h3 className="editorial-title text-3xl sm:text-4xl text-[#F5F3EF]">
                   Production Deliverables & Engineering
                 </h3>
               </div>
@@ -403,7 +403,7 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
                   <span className="text-[11px] font-mono uppercase tracking-widest text-white/50 block mb-2">
                     {spec.label}
                   </span>
-                  <p className="text-sm font-mono text-[#D8E5D0] font-medium">
+                  <p className="text-sm font-mono text-[#FF7847] font-medium">
                     {spec.value}
                   </p>
                 </div>
@@ -412,16 +412,16 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
 
             {/* Deliverables List */}
             <div className="mt-10 pt-8 border-t border-white/10">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#F5F0E8]/60 block mb-4">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#F5F3EF]/60 block mb-4">
                 Delivered Assets Suite:
               </span>
               <div className="flex flex-wrap gap-2.5">
                 {project.deliverables.map((item) => (
                   <span
                     key={item}
-                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-sm bg-white/5 border border-white/10 text-xs font-mono text-[#F5F0E8]"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-sm bg-white/5 border border-white/10 text-xs font-mono text-[#F5F3EF]"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D85C3F]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A1F]" />
                     {item}
                   </span>
                 ))}
@@ -432,12 +432,12 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
 
         {/* Sequential Next Project Transition Footer */}
         <section className="max-w-7xl mx-auto px-6 md:px-12 pb-24">
-          <div className="p-8 md:p-14 rounded-sm border border-white/15 bg-gradient-to-br from-[#22201e] to-[#171717] flex flex-col md:flex-row md:items-center justify-between gap-8 group">
+          <div className="p-8 md:p-14 rounded-sm border border-white/15 bg-gradient-to-br from-[#22201e] to-[#080808] flex flex-col md:flex-row md:items-center justify-between gap-8 group">
             <div className="max-w-xl">
-              <span className="eyebrow-label text-[#D85C3F] block mb-2">
+              <span className="eyebrow-label text-[#FF5A1F] block mb-2">
                 NEXT CASE STUDY {"//"} 0{((currentIndex + 1) % FEATURED_PROJECTS.length) + 1}
               </span>
-              <h4 className="editorial-title text-4xl sm:text-5xl text-[#F5F0E8] group-hover:text-white transition-colors mb-2">
+              <h4 className="editorial-title text-4xl sm:text-5xl text-[#F5F3EF] group-hover:text-white transition-colors mb-2">
                 {nextProject.title}
               </h4>
               <p className="text-sm text-white/70 font-sans">
@@ -447,7 +447,7 @@ export default function CaseStudyClient({ project }: CaseStudyClientProps) {
 
             <Link
               href={`/work/${nextProject.id}`}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[#171717] text-xs uppercase tracking-[0.18em] font-medium hover:bg-[#D85C3F] hover:text-white transition-all duration-300 self-start md:self-auto cursor-pointer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[#080808] text-xs uppercase tracking-[0.18em] font-medium hover:bg-[#FF5A1F] hover:text-white transition-all duration-300 self-start md:self-auto cursor-pointer"
             >
               <span>Explore Next Project</span>
               <ArrowUpRight className="w-4 h-4" />

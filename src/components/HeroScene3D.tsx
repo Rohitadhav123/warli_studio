@@ -22,14 +22,14 @@ function SculpturalComposition({ reducedMotion, mousePos }: SculpturalCompositio
   const materials = useMemo(() => {
     // Terracotta warm satin metal
     const terracotta = new THREE.MeshStandardMaterial({
-      color: new THREE.Color("#D85C3F"),
+      color: new THREE.Color("#FF5A1F"),
       roughness: 0.32,
       metalness: 0.28,
     });
 
     // Warm Ivory ceramic stone
     const warmIvory = new THREE.MeshStandardMaterial({
-      color: new THREE.Color("#F5F0E8"),
+      color: new THREE.Color("#F5F3EF"),
       roughness: 0.55,
       metalness: 0.08,
     });
@@ -242,14 +242,14 @@ export default function HeroScene3D() {
         <directionalLight
           position={[-4, -2, 2]}
           intensity={0.9}
-          color="#D8E5D0"
+          color="#FF7847"
         />
 
         {/* Terracotta Rim / Kicker Light */}
         <pointLight
           position={[0, -2, -3]}
           intensity={2.2}
-          color="#D85C3F"
+          color="#FF5A1F"
           distance={8}
         />
 
@@ -269,8 +269,8 @@ export default function HeroScene3D() {
 
       {/* Interactive Micro-hint */}
       <div className="absolute bottom-3 left-4 z-20 pointer-events-none">
-        <span className="text-[9px] font-mono tracking-widest text-[#F5F0E8]/50 uppercase flex items-center gap-1.5">
-          <span className="w-1 h-1 rounded-full bg-[#D85C3F] animate-ping" />
+        <span className="text-[9px] font-mono tracking-widest text-[#F5F3EF]/50 uppercase flex items-center gap-1.5">
+          <span className="w-1 h-1 rounded-full bg-[#FF5A1F] animate-ping" />
           INTERACTIVE 3D // POINTER SENSITIVE
         </span>
       </div>
