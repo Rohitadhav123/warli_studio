@@ -34,7 +34,7 @@ export default function ProjectCard({
         aria-label={`View case study for ${project.title}: ${project.subtitle}`}
       >
         {/* Visual Container with Sleek, Reduced Height */}
-        <div className="relative w-full overflow-hidden rounded-sm bg-[#141414] border border-white/10 h-[210px] xs:h-[240px] sm:h-[270px] md:h-[310px] lg:h-[340px]">
+        <div className={`relative w-full overflow-hidden rounded-[2px] bg-[#171512] border border-white/10 ${isWide ? "h-[260px] sm:h-[340px] lg:h-[430px]" : "h-[240px] sm:h-[300px] lg:h-[360px]"}`}>
           {/* Inner Image with Smooth Subtle Scale */}
           <div className="relative w-full h-full overflow-hidden">
             <Image
@@ -46,7 +46,7 @@ export default function ProjectCard({
                   ? "(max-width: 768px) 100vw, 1200px"
                   : "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
               }
-              className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 will-change-transform"
+              className={`object-cover transition-[transform,filter] duration-700 ease-out group-hover:scale-[1.035] group-hover:saturate-[1.08] will-change-transform ${isWide ? "object-center" : project.aspectRatio === "portrait" ? "object-[center_42%]" : "object-center"}`}
               priority={index < 2}
             />
           </div>
@@ -74,10 +74,21 @@ export default function ProjectCard({
         {/* Editorial Information Beneath Image */}
         <div className="pt-3.5 sm:pt-4 pb-2 flex flex-col gap-1 sm:gap-1.5">
 
-          <div className="flex items-baseline justify-between gap-4">
-            <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-[#F5F0E8] tracking-tight group-hover:text-[#FF5A1F] transition-colors leading-tight">
-              {project.title}
-            </h3>
+          <div className="flex items-start justify-between gap-4">
+            <div className="min-w-0">
+              <p className="mb-1.5 text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.18em] text-[#F5F3EF]/45">
+                {project.category} <span className="px-1 text-[#FF5A1F]">/</span> {project.year}
+              </p>
+              <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-[#F5F0E8] tracking-tight group-hover:text-[#FF7847] transition-colors leading-tight">
+                {project.title}
+              </h3>
+              <p className="mt-1.5 text-xs sm:text-sm text-[#F5F3EF]/55 leading-relaxed">
+                {project.subtitle}
+              </p>
+            </div>
+            <span className="mt-1 hidden sm:inline-flex shrink-0 items-center rounded-full border border-[#FF5A1F]/35 bg-[#FF5A1F]/[0.08] px-2.5 py-1 text-[9px] font-mono uppercase tracking-[0.12em] text-[#FF7847]">
+              Concept
+            </span>
           </div>
 
           {/* Deliverables Tags */}

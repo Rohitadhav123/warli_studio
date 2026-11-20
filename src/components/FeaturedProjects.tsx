@@ -65,7 +65,7 @@ export default function FeaturedProjects({ onOpenInquiry }: FeaturedProjectsProp
     <section
       ref={sectionRef}
       id="work"
-      className="bg-[#080808] text-[#F5F3EF] py-16 sm:py-24 md:py-36 border-b border-white/10"
+      className="bg-[#0B0A09] text-[#F5F3EF] py-16 sm:py-24 md:py-32 border-b border-white/10"
       aria-label="Featured Projects"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
@@ -105,7 +105,7 @@ export default function FeaturedProjects({ onOpenInquiry }: FeaturedProjectsProp
           - Middle Row: 1 wide horizontal rectangular card (same container height on desktop)
           - Bottom Row: 2 cards (same size and shape as top 2 cards)
         */}
-        <div className="space-y-6 sm:space-y-8 lg:space-y-10">
+        <div className="space-y-8 sm:space-y-10 lg:space-y-12">
           {/* Row 1: Top 2 Cards (Equal Size & Shape) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-start">
             <ProjectCard
@@ -144,18 +144,18 @@ export default function FeaturedProjects({ onOpenInquiry }: FeaturedProjectsProp
           </div>
         </div>
 
-        {/* Centered Action at Bottom: "See more work" */}
-        <div className="mt-14 sm:mt-20 md:mt-28 flex flex-col items-center justify-center gap-4 sm:gap-5 text-center">
+        <div className="mt-14 sm:mt-20 md:mt-24 border-t border-white/12 pt-6 sm:pt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+          <p className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.18em] text-[#F5F3EF]/45">
+            More worlds, more ways to make a mark.
+          </p>
           <Link
             href="/work"
-            className="px-6 py-3 rounded-full border border-white/30 text-[#F5F3EF] text-xs uppercase tracking-[0.22em] font-medium hover:bg-white hover:text-[#080808] transition-all duration-300 inline-flex items-center justify-center gap-3 cursor-pointer group shadow-sm hover:shadow-lg"
+            className="self-start sm:self-auto px-5 py-3 rounded-full border border-white/25 text-[#F5F3EF] text-[10px] sm:text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#F5F3EF] hover:text-[#0B0A09] hover:border-[#F5F3EF] transition-all duration-300 inline-flex items-center justify-center gap-3 cursor-pointer group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A1F] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0A09]"
             aria-label="See more work"
           >
             <span>See more work</span>
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
-
-
         </div>
       </div>
     </section>
