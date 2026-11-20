@@ -61,7 +61,7 @@ export default function IndustriesMarquee({ onOpenInquiry }: IndustriesProps) {
               className="inline-flex items-center gap-8 md:gap-14 mx-4 md:mx-7 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-[#F5F0E8]/75 hover:text-white transition-colors"
             >
               <span>{item.name}</span>
-              <span className="w-2 h-2 rounded-full bg-[#D85C3F]" />
+              <span className="w-2 h-2 rounded-full bg-[#FF5A1F]" />
             </div>
           ))}
         </div>
@@ -81,14 +81,14 @@ export default function IndustriesMarquee({ onOpenInquiry }: IndustriesProps) {
                 onClick={() => onOpenInquiry(industry.name)}
                 className={`industry-card-anim group p-6 rounded-sm border transition-all duration-300 cursor-pointer flex flex-col justify-between ${
                   isHovered
-                    ? "border-[#D85C3F] bg-white/[0.06] shadow-lg shadow-[#D85C3F]/5"
+                    ? "border-[#FF5A1F] bg-white/[0.06] shadow-lg shadow-[#FF5A1F]/5"
                     : "border-white/10 bg-white/[0.02] hover:bg-white/[0.04]"
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between text-xs font-mono text-white/40 pb-4 border-b border-white/10 mb-4">
-                    <span className="text-[#D85C3F] font-semibold">{industry.code}</span>
-                    <ArrowUpRight className="w-4 h-4 opacity-40 group-hover:opacity-100 group-hover:text-[#D85C3F] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    <span className="text-[#FF5A1F] font-semibold">{industry.code}</span>
+                    <ArrowUpRight className="w-4 h-4 opacity-40 group-hover:opacity-100 group-hover:text-[#FF5A1F] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </div>
 
                   <h3 className="font-serif text-2xl text-[#F5F0E8] group-hover:text-white transition-colors mb-3">

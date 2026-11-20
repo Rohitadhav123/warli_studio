@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-studio-black: #171717;
-  --color-warm-ivory: #F5F0E8;
-  --color-terracotta: #D85C3F;
-  --color-terracotta-hover: #c44e32;
-  --color-soft-sage: #D8E5D0;
-  --color-soft-sage-dark: #b9caa8;
+  --color-studio-black: #080808;
+  --color-pure-black: #000000;
+  --color-premium-white: #FFFFFF;
+  --color-warm-ivory: #F5F3EF;
+  --color-terracotta: #FF5A1F;
+  --color-terracotta-hover: #E94B16;
+  --color-soft-orange: #FF7847;
+  --color-soft-sage: #F5F3EF;
+  --color-soft-sage-dark: #E7E2DA;
   --font-display: "Cabinet Grotesk", "Syne", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: "Cabinet Grotesk", "Syne", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-sans: "Neue Montreal", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -14,10 +17,10 @@
 }
 
 :root {
-  --studio-black: #171717;
-  --warm-ivory: #F5F0E8;
-  --terracotta: #D85C3F;
-  --soft-sage: #D8E5D0;
+  --studio-black: #080808;
+  --warm-ivory: #F5F3EF;
+  --terracotta: #FF5A1F;
+  --soft-sage: #F5F3EF;
   --white: #FFFFFF;
   --font-display: "Cabinet Grotesk", "Syne", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: "Cabinet Grotesk", "Syne", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -32,7 +35,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #171717;
+  background: #080808;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -41,7 +44,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #D85C3F;
+  background: #FF5A1F;
 }
 
 /* Option A: Architectural Grotesque Typography */

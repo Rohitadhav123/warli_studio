@@ -27,7 +27,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#171717] text-[#F5F0E8] flex flex-col selection:bg-[#D85C3F] selection:text-white">
+    <div className="relative min-h-screen bg-[#080808] text-[#F5F3EF] flex flex-col selection:bg-[#FF5A1F] selection:text-white">
       {/* 1. Sticky Editorial Navigation */}
       <Header onOpenInquiry={() => handleOpenInquiry()} />
 

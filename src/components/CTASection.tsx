@@ -65,7 +65,7 @@ export default function CTASection({ onOpenInquiry }: CTASectionProps) {
         >
           {/* Eyebrow */}
           <div className="cta-anim-elem inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#D85C3F] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#FF5A1F] animate-pulse" />
             <span className="eyebrow-label text-[#F5F0E8]/70">
               Initiate Collaboration // 2026 Direct Engagements
             </span>
@@ -88,7 +88,7 @@ export default function CTASection({ onOpenInquiry }: CTASectionProps) {
           <div className="cta-anim-elem flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto">
             <button
               onClick={onOpenInquiry}
-              className="w-full sm:w-auto px-10 py-4 rounded-full bg-[#D85C3F] text-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#BF4C32] transition-all duration-200 inline-flex items-center justify-center gap-3 shadow-lg group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="w-full sm:w-auto px-10 py-4 rounded-full bg-[#FF5A1F] text-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#E94B16] transition-all duration-200 inline-flex items-center justify-center gap-3 shadow-lg group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <span>Start a Project</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -106,7 +106,7 @@ export default function CTASection({ onOpenInquiry }: CTASectionProps) {
           {/* Studio Principles Micro Bar */}
           <div className="cta-anim-elem mt-16 pt-10 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-6 w-full text-xs font-mono text-[#F5F0E8]/60">
             <div className="flex items-center justify-center gap-2">
-              <Clock className="w-4 h-4 text-[#D85C3F]" />
+              <Clock className="w-4 h-4 text-[#FF5A1F]" />
               <span>Direct founder review within 24h</span>
             </div>
             <div className="flex items-center justify-center gap-2">

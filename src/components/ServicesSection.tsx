@@ -38,7 +38,7 @@ export default function ServicesSection({
 
   const renderIcon = (
     iconName: string,
-    className: string = "w-5 h-5 text-[#D85C3F]"
+    className: string = "w-5 h-5 text-[#FF5A1F]"
   ) => {
     const props = { className };
     switch (iconName) {
@@ -62,18 +62,18 @@ export default function ServicesSection({
   return (
     <section
       id="services"
-      className="bg-[#171717] text-[#F5F0E8] py-20 md:py-28 border-b border-white/10 relative overflow-hidden"
+      className="bg-[#171717] text-[#F5F3EF] py-20 md:py-28 border-b border-white/10 relative overflow-hidden"
       aria-label="Studio Services & Capabilities"
     >
       {/* Background Subtle Ambient Glow */}
-      <div className="absolute top-1/4 -right-40 w-96 h-96 bg-[#D85C3F]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 -left-40 w-96 h-96 bg-[#D85C3F]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -right-40 w-96 h-96 bg-[#FF5A1F]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 -left-40 w-96 h-96 bg-[#FF5A1F]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Eyebrow */}
         <div className="flex items-center gap-3 mb-4">
-          <span className="w-2 h-2 rounded-full bg-[#D85C3F]" />
-          <span className="eyebrow-label text-[#F5F0E8]/70 text-xs font-mono tracking-widest uppercase">
+          <span className="w-2 h-2 rounded-full bg-[#FF5A1F]" />
+          <span className="eyebrow-label text-[#F5F3EF]/70 text-xs font-mono tracking-widest uppercase">
             Our Disciplines
           </span>
         </div>
@@ -81,14 +81,14 @@ export default function ServicesSection({
         {/* Section Title & Description */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10">
           <div className="max-w-3xl">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight text-[#F5F0E8] leading-[1.08]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight text-[#F5F3EF] leading-[1.08]">
               Tailored craft for{" "}
-              <span className="editorial-italic font-normal text-[#D85C3F]">
+              <span className="editorial-italic font-normal text-[#FF5A1F]">
                 uncompromising
               </span>{" "}
               brands.
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-[#F5F0E8]/70 max-w-2xl font-sans leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg text-[#F5F3EF]/70 max-w-2xl font-sans leading-relaxed">
               From cinematic film and photorealistic 3D to tactile packaging, brand systems, and bespoke digital worlds — every discipline is guided by dedicated art direction.
             </p>
           </div>
@@ -97,10 +97,10 @@ export default function ServicesSection({
           <div className="shrink-0">
             <button
               onClick={() => onOpenInquiry()}
-              className="px-5 py-2.5 rounded-full border border-white/20 text-xs uppercase font-mono tracking-wider font-semibold hover:border-[#D85C3F] hover:bg-[#D85C3F]/10 transition-all flex items-center gap-2 cursor-pointer group"
+              className="px-5 py-2.5 rounded-full border border-white/20 text-xs uppercase font-mono tracking-wider font-semibold hover:border-[#FF5A1F] hover:bg-[#FF5A1F]/10 transition-all flex items-center gap-2 cursor-pointer group"
             >
               <span>Start a Project</span>
-              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-[#D85C3F]" />
+              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-[#FF5A1F]" />
             </button>
           </div>
         </div>
@@ -118,8 +118,8 @@ export default function ServicesSection({
               onClick={() => setFilter(tab.id)}
               className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all tracking-wider whitespace-nowrap cursor-pointer ${
                 filter === tab.id
-                  ? "bg-[#D85C3F] text-white font-medium shadow-sm"
-                  : "bg-white/5 text-[#F5F0E8]/70 hover:bg-white/10 hover:text-white border border-white/5"
+                  ? "bg-[#FF5A1F] text-white font-medium shadow-sm"
+                  : "bg-white/5 text-[#F5F3EF]/70 hover:bg-white/10 hover:text-white border border-white/5"
               }`}
             >
               {tab.label}
@@ -133,36 +133,36 @@ export default function ServicesSection({
             <Link
               key={service.id}
               href={`/services/${service.id}`}
-              className="group relative bg-[#1c1c1c] border border-white/10 hover:border-[#D85C3F]/70 rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[360px] transition-all duration-300 hover:shadow-xl hover:shadow-[#D85C3F]/10 hover:-translate-y-1 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F] overflow-hidden block"
+              className="group relative bg-[#111111] border border-white/10 hover:border-[#FF5A1F]/70 rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[360px] transition-all duration-300 hover:shadow-xl hover:shadow-[#FF5A1F]/10 hover:-translate-y-1 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A1F] overflow-hidden block"
             >
               {/* Dynamic Subtle Hover Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#D85C3F]/5 via-transparent to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#FF5A1F]/5 via-transparent to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
               {/* Card Top: Number, Category Tag, Title & Icon */}
               <div>
                 <div className="flex items-start justify-between gap-3 mb-4">
                   <div className="flex items-center gap-2">
-                    <span className="font-mono text-xs font-bold text-[#D85C3F]">
+                    <span className="font-mono text-xs font-bold text-[#FF5A1F]">
                       {service.number}
                     </span>
-                    <span className="text-[#F5F0E8]/30 text-xs">/</span>
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-[#F5F0E8]/60">
+                    <span className="text-[#F5F3EF]/30 text-xs">/</span>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-[#F5F3EF]/60">
                       {service.category}
                     </span>
                   </div>
 
-                  <div className="w-9 h-9 shrink-0 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#D85C3F] group-hover:border-[#D85C3F] transition-all">
-                    {renderIcon(service.iconName, "w-4 h-4 text-[#D85C3F] group-hover:text-white transition-colors")}
+                  <div className="w-9 h-9 shrink-0 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#FF5A1F] group-hover:border-[#FF5A1F] transition-all">
+                    {renderIcon(service.iconName, "w-4 h-4 text-[#FF5A1F] group-hover:text-white transition-colors")}
                   </div>
                 </div>
 
                 {/* Card Title */}
-                <h3 className="text-xl sm:text-2xl font-display font-bold tracking-tight text-[#F5F0E8] group-hover:text-white transition-colors leading-snug mb-3">
+                <h3 className="text-xl sm:text-2xl font-display font-bold tracking-tight text-[#F5F3EF] group-hover:text-white transition-colors leading-snug mb-3">
                   {service.title}
                 </h3>
 
                 {/* Card Tagline */}
-                <p className="text-sm text-[#F5F0E8]/70 leading-relaxed font-sans mb-5">
+                <p className="text-sm text-[#F5F3EF]/70 leading-relaxed font-sans mb-5">
                   {service.tagline}
                 </p>
               </div>
@@ -173,7 +173,7 @@ export default function ServicesSection({
                   {service.deliverableTags.slice(0, 3).map((tag, idx) => (
                     <span
                       key={idx}
-                      className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/5 text-[#F5F0E8]/75 group-hover:border-white/15 transition-colors"
+                      className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/5 text-[#F5F3EF]/75 group-hover:border-white/15 transition-colors"
                     >
                       {tag}
                     </span>
@@ -183,12 +183,12 @@ export default function ServicesSection({
 
               {/* Card Bottom: Timeline & Action */}
               <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono">
-                <div className="flex items-center gap-1.5 text-[#F5F0E8]/50">
-                  <Clock className="w-3.5 h-3.5 text-[#D85C3F]" />
+                <div className="flex items-center gap-1.5 text-[#F5F3EF]/50">
+                  <Clock className="w-3.5 h-3.5 text-[#FF5A1F]" />
                   <span>{service.turnaround}</span>
                 </div>
 
-                <div className="inline-flex items-center gap-1 text-[#D85C3F] group-hover:text-white transition-colors font-medium">
+                <div className="inline-flex items-center gap-1 text-[#FF5A1F] group-hover:text-white transition-colors font-medium">
                   <span>Explore discipline</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -203,7 +203,7 @@ export default function ServicesSection({
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Studio Service Footer Callout */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-6 text-xs font-mono text-[#F5F0E8]/60">
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-6 text-xs font-mono text-[#F5F3EF]/60">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <span>Direct collaboration with creative directors</span>
             <span className="hidden sm:inline">·</span>
@@ -214,7 +214,7 @@ export default function ServicesSection({
 
           <button
             onClick={() => onOpenInquiry()}
-            className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-[#D85C3F] hover:text-[#c44e32] transition-colors cursor-pointer group"
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-[#FF5A1F] hover:text-[#E94B16] transition-colors cursor-pointer group"
           >
             <span>Commission a project</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

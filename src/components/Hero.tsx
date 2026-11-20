@@ -150,7 +150,7 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
   return (
     <section
       ref={heroRef}
-      className="relative bg-[#171717] text-[#F5F0E8] pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden border-b border-white/10"
+      className="relative bg-[#080808] text-[#F5F3EF] pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden border-b border-white/10"
       aria-label="Warli Studio Cinematic Hero Showcase"
     >
       {/* Background Architectural Grid Accent Lines */}
@@ -201,7 +201,7 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
                 alt="Warli Archviz"
                 className="h-10 w-auto object-contain opacity-30 mb-3"
               />
-              <span className="text-xs font-mono uppercase tracking-widest text-[#F5F0E8]/40">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#F5F3EF]/40">
                 Cinematic Showcase Active
               </span>
             </div>
@@ -215,7 +215,7 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
           <div className="relative z-20 flex items-center justify-between gap-4">
             {/* Reel Status Tag */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-white/15">
-              <span className="w-2 h-2 rounded-full bg-[#D85C3F] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#FF5A1F] animate-pulse" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/warli-logo-white.png"
@@ -229,13 +229,13 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
           <div className="relative z-20 flex flex-col md:flex-row md:items-end justify-between gap-6 pt-12">
             <div className="max-w-2xl">
               {/* Oversized Headline */}
-              <h1 className="editorial-title text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] text-[#F5F0E8] font-extrabold tracking-[-0.04em] leading-[0.96] mb-2 sm:mb-3">
+              <h1 className="editorial-title text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] text-[#F5F3EF] font-extrabold tracking-[-0.04em] leading-[0.96] mb-2 sm:mb-3">
                 Make Your Brand{" "}
-                <span className="editorial-italic font-extrabold text-[#F5F0E8]">
+                <span className="editorial-italic font-extrabold text-[#F5F3EF]">
                   Impossible
                 </span>{" "}
                 to{" "}
-                <span className="text-[#D85C3F] relative inline-block">
+                <span className="text-[#FF5A1F] relative inline-block">
                   Ignore.
                 </span>
               </h1>
@@ -245,7 +245,7 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 shrink-0">
               <button
                 onClick={handleScrollToWork}
-                className="px-6 py-3 rounded-full bg-white text-[#171717] text-xs uppercase tracking-[0.18em] font-medium hover:bg-[#F5F0E8] transition-all duration-200 inline-flex items-center gap-2 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F]"
+                className="px-6 py-3 rounded-full bg-white text-[#080808] text-xs uppercase tracking-[0.18em] font-medium hover:bg-[#F5F3EF] transition-all duration-200 inline-flex items-center gap-2 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A1F]"
               >
                 <span>View Work</span>
                 <ArrowDown className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
@@ -253,7 +253,7 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
 
               <button
                 onClick={onOpenInquiry}
-                className="px-6 py-3 rounded-full bg-[#D85C3F] text-white text-xs uppercase tracking-[0.18em] font-medium hover:bg-[#BF4C32] transition-all duration-200 inline-flex items-center gap-2 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                className="px-6 py-3 rounded-full bg-[#FF5A1F] text-white text-xs uppercase tracking-[0.18em] font-medium hover:bg-[#E94B16] transition-all duration-200 inline-flex items-center gap-2 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 <span>Start a Project</span>
                 <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -263,17 +263,17 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
         </div>
 
         {/* Generous Margin and Bottom Scroll Meta Strip */}
-        <div className="mt-8 md:mt-12 flex items-center justify-between text-xs text-[#F5F0E8]/50 font-mono">
+        <div className="mt-8 md:mt-12 flex items-center justify-between text-xs text-[#F5F3EF]/50 font-mono">
           <button
             onClick={handleScrollToWork}
             className="flex items-center gap-3 hover:text-white transition-colors cursor-pointer group"
             aria-label="Scroll down to featured projects"
           >
-            <span className="w-5 h-[1.5px] bg-[#D85C3F] group-hover:w-8 transition-all" />
+            <span className="w-5 h-[1.5px] bg-[#FF5A1F] group-hover:w-8 transition-all" />
             <span className="uppercase tracking-[0.2em] text-[11px]">
               Scroll to explore
             </span>
-            <ArrowDown className="w-3.5 h-3.5 animate-bounce text-[#D85C3F]" />
+            <ArrowDown className="w-3.5 h-3.5 animate-bounce text-[#FF5A1F]" />
           </button>
 
           <div className="hidden sm:flex items-center gap-4 text-[11px] uppercase tracking-wider">

@@ -70,7 +70,7 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
-          ? "bg-[#171717]/92 backdrop-blur-md border-b border-white/10 py-4 shadow-lg shadow-black/20"
+          ? "bg-[#080808]/92 backdrop-blur-md border-b border-white/10 py-4 shadow-lg shadow-black/20"
           : "bg-transparent py-6 md:py-8"
           }`}
       >
@@ -78,7 +78,7 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
           {/* Company Brand Logo */}
           <Link
             href="/"
-            className="group flex items-center gap-3 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F] rounded-sm py-1"
+            className="group flex items-center gap-3 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A1F] rounded-sm py-1"
             aria-label="Warli Archives Home"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -87,7 +87,7 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
               alt="Warli Archviz"
               className="h-7 sm:h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
             />
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#D85C3F] group-hover:scale-125 transition-transform" />
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#FF5A1F] group-hover:scale-125 transition-transform" />
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -103,10 +103,10 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                   e.preventDefault();
                   handleNavClick(item.href, item.hash);
                 }}
-                className="text-xs uppercase tracking-[0.2em] text-[#F5F0E8]/70 hover:text-white transition-colors relative py-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#D85C3F] rounded-sm group cursor-pointer"
+                className="text-xs uppercase tracking-[0.2em] text-[#F5F0E8]/70 hover:text-white transition-colors relative py-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#FF5A1F] rounded-sm group cursor-pointer"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#D85C3F] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#FF5A1F] transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </nav>
@@ -115,7 +115,7 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
           <div className="hidden md:flex items-center gap-5">
             <button
               onClick={onOpenInquiry}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#D85C3F] text-white text-xs uppercase tracking-[0.16em] font-medium hover:bg-[#BF4C32] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#171717] shadow-sm cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#FF5A1F] text-white text-xs uppercase tracking-[0.16em] font-medium hover:bg-[#E94B16] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808] shadow-sm cursor-pointer"
             >
               <span>Start a Project</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -126,13 +126,13 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
           <div className="flex md:hidden items-center gap-3">
             <button
               onClick={onOpenInquiry}
-              className="px-3.5 py-1.5 rounded-full bg-[#D85C3F] text-white text-[10px] uppercase tracking-[0.15em] font-medium"
+              className="px-3.5 py-1.5 rounded-full bg-[#FF5A1F] text-white text-[10px] uppercase tracking-[0.15em] font-medium"
             >
               Start
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-[#F5F0E8] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D85C3F] rounded-sm cursor-pointer"
+              className="p-2 text-[#F5F0E8] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A1F] rounded-sm cursor-pointer"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
             >
@@ -146,7 +146,7 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
       {mobileMenuOpen && (
         <div
           ref={mobileMenuRef}
-          className="fixed inset-0 z-50 bg-[#171717]/98 backdrop-blur-xl flex flex-col justify-between px-8 py-10 text-[#F5F0E8]"
+          className="fixed inset-0 z-50 bg-[#080808]/98 backdrop-blur-xl flex flex-col justify-between px-8 py-10 text-[#F5F0E8]"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation Menu"
@@ -160,7 +160,7 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                 alt="Warli Archviz"
                 className="h-7 w-auto object-contain"
               />
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D85C3F]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A1F]" />
             </div>
             <button
               onClick={() => setMobileMenuOpen(false)}
@@ -184,8 +184,8 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                 className="mobile-nav-link group flex items-baseline justify-between py-3 border-b border-white/10 cursor-pointer"
               >
                 <div className="flex items-baseline gap-4">
-                  <span className="text-xs font-mono text-[#D85C3F]">0{idx + 1}</span>
-                  <span className="font-serif text-4xl text-[#F5F0E8] group-hover:text-[#D85C3F] transition-colors">
+                  <span className="text-xs font-mono text-[#FF5A1F]">0{idx + 1}</span>
+                  <span className="font-serif text-4xl text-[#F5F0E8] group-hover:text-[#FF5A1F] transition-colors">
                     {item.label}
                   </span>
                 </div>
@@ -201,7 +201,7 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
                 setMobileMenuOpen(false);
                 onOpenInquiry();
               }}
-              className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-[#D85C3F] text-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#BF4C32] transition-colors cursor-pointer"
+              className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-[#FF5A1F] text-white text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#E94B16] transition-colors cursor-pointer"
             >
               <span>Start a Project</span>
               <ArrowUpRight className="w-4 h-4" />

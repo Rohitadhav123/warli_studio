@@ -70,7 +70,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-[#171717] text-[#F5F0E8] font-sans antialiased selection:bg-[#D85C3F] selection:text-white">
+      <body className="min-h-screen bg-[#080808] text-[#F5F3EF] font-sans antialiased selection:bg-[#FF5A1F] selection:text-white">
         {children}
         <ColorBlendingCursor />
       </body>
